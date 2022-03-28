@@ -17,12 +17,10 @@ class MainActivity : AppCompatActivity() {
                 .beginTransaction()
                 .replace(R.id.fragment1_placeholder,Fragment_One())
                 .commit()
-
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fragment2_placeholder,Fragment_Two())
                 .commit()
-
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fragment3_placeholder,Fragment_Three())

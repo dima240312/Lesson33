@@ -2,4 +2,5 @@
     <string name="app_name">Lesson32_Fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Текст пустого фрагмента</string>
+    <string name="button_show">show</string>
 </resources>
