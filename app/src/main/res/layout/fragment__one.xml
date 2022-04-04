@@ -6,11 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".Fragment_One">
 
-    <Button
-        android:id="@+id/show_extra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Button" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_MessageOne"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:hint="Сообщение фрагмент 1" />
+
+        <Button
+            android:id="@+id/button_SendToFragmentTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="send message" />
+
+        <Button
+            android:id="@+id/button_sendToActivityMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="send message to activity" />
+    </LinearLayout>
 </FrameLayout>

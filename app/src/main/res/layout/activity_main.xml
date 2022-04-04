@@ -7,67 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TableLayout
-        android:id="@+id/main_table_container"
+    <FrameLayout
+        android:id="@+id/fragment1_placeholder"
         android:layout_width="match_parent"
-        android:layout_height="617dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/mainMessageBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
+    </FrameLayout>
 
-            <FrameLayout
-                android:id="@+id/fragment1_placeholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/fragment2_placeholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-            </FrameLayout>
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <FrameLayout
-                android:id="@+id/fragment3_placeholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:id="@+id/fragment4_placeholder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-            </FrameLayout>
-        </TableRow>
-
-    </TableLayout>
-
-    <Button
-        android:id="@+id/show_fragments"
+    <TextView
+        android:id="@+id/mainMessageBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_show"
+        android:hint="Главное сообщение"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_table_container" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/fragment2_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainMessageBox">
+
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

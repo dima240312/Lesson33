@@ -5,20 +5,37 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
+import com.example.lesson32_fragment.databinding.FragmentTwoBinding
 
 class Fragment_Two : Fragment() {
+
+    private val dataModel: DataModel by activityViewModels()
+    lateinit var binding: FragmentTwoBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__two, container, false)
+        binding = FragmentTwoBinding.inflate(inflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        dataModel.messageForFragment_Two.observe(activity as LifecycleOwner) {
+            binding.tvMessageTwo.text = it
+        }
+        binding.buttonSendToFragmentOne.setOnClickListener {
+            dataModel.messageForFragment_One.value = "Hello from fragment 2"
+        }
+        binding.buttonSendToActivityMain.setOnClickListener {
+            dataModel.messageForActivity.value = "Hello activity from fragment 2"
+        }
     }
 
     companion object {
-       @JvmStatic
+        @JvmStatic
         fun newInstance() = Fragment_Two()
     }
 }
